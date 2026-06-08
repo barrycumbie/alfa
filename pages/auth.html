@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <title>login! </title>
+</head>
+
+<body>
+
+  <a href="../index.html"><-- go home</a>
+      <h1>log in!</h1>
+      <label>username</label>
+      <input id="userBox" type="textbox">
+      <br>
+      <label>password</label>
+      <input id="passBox" type="password">
+      <br>
+      <button id="loginBtn">log in</button>
+      <br>
+      <button disabled>Google</button>
+      <button disabled>GitHub</button>
+      <a href="" disabled>create an account</a>
+      <p>little footer or disclaimer</p>
+
+
+
+      <!-- Bootstrap JS Bundle -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Custom JS -->
+      <script src="../assets/js/main.js"></script>
+
+      <!-- internal JS todo: move this to an external file -->
+      <script>
+
+        document.getElementById('loginBtn').addEventListener('click', checkLogin);
+
+        function checkLogin() {
+
+          let isAuthN = false;
+
+          console.log('we are in the checkLogin f/n');
+
+          const passBox = document.getElementById('passBox').value;
+          // console.log(passBox);  
+
+          if (passBox == 'lasagna') {
+            console.log('should be true');
+            isAuthN = true;
+            console.log(isAuthN);
+            sessionStorage.setItem('sessionAuthN', isAuthN);
+            window.location.assign('../index.html');
+          }
+          else {
+            console.log('should be false');
+            isAuthN = false;
+            console.log(isAuthN);
+            sessionStorage.setItem('sessionAuthN', isAuthN)
+            //todo stuff give msg wrong, clear out the textboxes. 
+          }
+        }
+
+        function demoMode() {
+          document.getElementById('passBox').value = 'lasagna'
+        }
+
+
+
+      </script>
+
+</body>
+
+</html>
