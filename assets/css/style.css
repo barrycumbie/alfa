@@ -1,0 +1,17 @@
+body {
+	background: linear-gradient(180deg, #f8f9fa 0%, #eef2f7 100%);
+}
+
+.card {
+	border: 0;
+	border-radius: 0.9rem;
+}
+
+#output {
+	background-color: #0b1020;
+	color: #d6e2ff;
+	border-radius: 0.6rem;
+	padding: 1rem;
+	max-height: 320px;
+	overflow: auto;
+}
